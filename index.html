@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b100e">
+<meta name="description" content="DigitalShield is a privacy-first personal cyber safety toolkit with password guidance, secure password generation, phishing education and practical privacy checklists.">
+<title>DigitalShield — Personal Cyber Safety Toolkit</title>
+<style>
+:root{color-scheme:dark;--bg:#090d0b;--panel:#101713;--panel2:#141d17;--line:#25352b;--text:#edf5ef;--muted:#91a398;--green:#72e0a1;--green2:#b0f5c9;--danger:#ff8585;--amber:#f3c77b;--shadow:0 18px 55px #0004;--radius:18px}
+:root[data-theme="light"]{color-scheme:light;--bg:#f3f7f4;--panel:#fff;--panel2:#edf4ef;--line:#dce7df;--text:#17251c;--muted:#5f7266;--green:#167b49;--green2:#0c6037;--danger:#b52f3d;--amber:#986311;--shadow:0 18px 55px #1231}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#173b2938,transparent 38%),var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--green);outline-offset:3px}a{color:inherit}.app{min-height:100vh}.topbar{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(18px)}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.brandmark{width:39px;height:39px;border-radius:13px;background:linear-gradient(145deg,#244c35,#11241a);border:1px solid #477757;display:grid;place-items:center;color:#aaf4c3;font-size:20px}.brandname{font-weight:760;letter-spacing:-.04em;font-size:19px}.brandname span{color:var(--green)}.brand-sub{font-size:10px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;margin-top:-3px}.top-actions{display:flex;align-items:center;gap:10px}.status{font-size:12px;color:var(--green);display:flex;align-items:center;gap:7px;padding:8px 11px;border:1px solid var(--line);border-radius:999px}.dot{height:7px;width:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}.iconbtn,.menu-toggle{border:1px solid var(--line);background:var(--panel);color:var(--text);height:40px;width:42px;border-radius:12px;display:grid;place-items:center;font-size:17px}.menu-toggle{display:none}.layout{max-width:1500px;margin:auto;display:grid;grid-template-columns:248px minmax(0,1fr);min-height:calc(100vh - 76px)}.sidebar{padding:25px 16px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:7px}.nav-label{font-size:10px;letter-spacing:.16em;color:var(--muted);font-weight:750;padding:8px 12px 5px;text-transform:uppercase}.nav-btn{display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid transparent;border-radius:12px;background:transparent;color:var(--muted);text-align:left;width:100%;font-size:13px;font-weight:600;transition:.18s}.nav-btn .ico{font-size:17px;width:22px;text-align:center}.nav-btn:hover{background:var(--panel2);color:var(--text)}.nav-btn.active{background:color-mix(in srgb,var(--green) 12%,var(--panel));border-color:color-mix(in srgb,var(--green) 26%,var(--line));color:var(--green)}.sidebar-bottom{margin-top:auto;padding:15px 12px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.sidebar-bottom strong{font-size:12px}.sidebar-bottom p{font-size:11px;color:var(--muted);margin:5px 0 0}.main{padding:34px clamp(18px,3.2vw,48px) 55px;min-width:0}.page{display:none;animation:fade .25s ease}.page.active{display:block}@keyframes fade{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:none}}.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--green);font-weight:800}.page-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:26px}.page-head h1{font-size:clamp(27px,3vw,38px);letter-spacing:-.055em;line-height:1.13;margin:8px 0 9px}.page-head p{color:var(--muted);max-width:650px;margin:0;font-size:14px}.smalltag{font-size:11px;color:var(--muted);border:1px solid var(--line);padding:7px 10px;border-radius:999px;white-space:nowrap}.hero{position:relative;overflow:hidden;border:1px solid #315440;background:linear-gradient(115deg,#12251a,#0e1712 62%,#132a1c);border-radius:24px;padding:clamp(24px,4vw,44px);box-shadow:var(--shadow);margin-bottom:22px}.hero:after{content:"";position:absolute;width:290px;height:290px;border:1px solid #5dbb7a20;border-radius:50%;right:-70px;top:-115px;box-shadow:0 0 0 30px #5dbb7a08,0 0 0 65px #5dbb7a06}.hero-inner{position:relative;z-index:1;max-width:650px}.hero-label{display:inline-flex;gap:8px;align-items:center;color:#a8e8bd;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:750}.hero h1{font-size:clamp(32px,4.5vw,52px);line-height:1.03;letter-spacing:-.06em;margin:18px 0 15px}.hero h1 span{color:#86e6a8}.hero p{color:#b3c6b8;max-width:510px;margin:0 0 24px}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:11px 15px;border-radius:11px;font-weight:680;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,border-color .15s}.btn:hover{transform:translateY(-1px);border-color:var(--green)}.btn.primary{background:var(--green);color:#062111;border-color:var(--green)}.btn.ghost{background:transparent}.btn.danger{color:var(--danger)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.hero .btn{background:var(--green);color:#082112;border-color:var(--green)}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:24px}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;min-width:0}.stat-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{height:34px;width:34px;display:grid;place-items:center;border-radius:11px;background:var(--panel2);color:var(--green);font-size:17px}.stat-number{font-size:30px;font-weight:760;letter-spacing:-.05em;margin-top:12px}.stat-note{font-size:11px;color:var(--muted);margin-top:2px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:28px 0 14px}.section-title h2{font-size:18px;letter-spacing:-.03em;margin:0}.section-title p{font-size:12px;color:var(--muted);margin:4px 0 0}.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.tool-card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:20px;display:flex;flex-direction:column;min-height:190px;transition:.2s}.tool-card:hover{border-color:color-mix(in srgb,var(--green) 55%,var(--line));transform:translateY(-2px)}.tool-icon{width:42px;height:42px;border:1px solid var(--line);background:var(--panel2);border-radius:13px;display:grid;place-items:center;color:var(--green);font-size:20px;margin-bottom:15px}.tool-card h3{font-size:15px;margin:0 0 7px}.tool-card p{font-size:12px;color:var(--muted);margin:0 0 18px}.tool-card .btn{margin-top:auto;align-self:flex-start}.privacy-note{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);background:var(--panel2);border-radius:14px;padding:15px;margin-top:20px}.privacy-note .ico{color:var(--green);font-size:19px}.privacy-note strong{font-size:12px}.privacy-note p{font-size:11px;color:var(--muted);margin:3px 0 0}.two-col{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:16px}.card h2,.card h3{margin:0 0 8px;letter-spacing:-.03em}.card h2{font-size:18px}.card h3{font-size:15px}.muted{color:var(--muted)}.helper{font-size:12px;color:var(--muted);margin:0 0 16px}.field-label{display:block;font-size:12px;font-weight:700;margin:16px 0 8px}.input-wrap{display:flex;gap:8px}.field{width:100%;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:12px 13px;color:var(--text)}.field::placeholder{color:var(--muted)}.meter{height:7px;background:var(--panel2);border-radius:99px;overflow:hidden;margin:15px 0 8px}.meter span{height:100%;display:block;width:0;background:var(--green);transition:width .2s,background .2s;border-radius:99px}.meter-label{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted)}.result{margin-top:15px;padding:13px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);font-size:12px}.result strong{display:block;margin-bottom:4px}.result ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}.result li{margin:3px 0}.range-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;margin:17px 0 8px}.range-row output{color:var(--green)}input[type=range]{width:100%;accent-color:var(--green)}.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:13px 0 18px}.check-option{display:flex;gap:8px;align-items:center;background:var(--bg);border:1px solid var(--line);padding:10px;border-radius:10px;font-size:12px}.check-option input,.checkline input{accent-color:var(--green);width:16px;height:16px}.password-output{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:12px;font-size:14px}.password-output .generated{overflow-wrap:anywhere;word-break:break-all}.quiz-progress{height:5px;background:var(--panel2);border-radius:99px;overflow:hidden;margin:18px 0}.quiz-progress span{display:block;height:100%;background:var(--green);transition:width .2s}.question-count{font-size:11px;color:var(--green);letter-spacing:.1em;text-transform:uppercase;font-weight:800}.question{font-size:21px;line-height:1.3;letter-spacing:-.035em;margin:12px 0 18px}.answer-list{display:grid;gap:9px}.answer{width:100%;text-align:left;display:flex;gap:11px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);padding:13px;border-radius:12px;color:var(--text);font-size:13px}.answer:hover:not(:disabled){border-color:var(--green)}.answer .letter{height:25px;width:25px;flex:none;border-radius:8px;display:grid;place-items:center;background:var(--panel2);font-size:11px;font-weight:800}.answer.correct{border-color:var(--green);background:color-mix(in srgb,var(--green) 9%,var(--panel))}.answer.wrong{border-color:var(--danger)}.feedback{margin-top:14px;border-radius:12px;padding:13px;background:var(--panel2);font-size:12px}.feedback strong{display:block;margin-bottom:4px}.quiz-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}.checklist{display:grid;gap:10px}.checkline{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:14px}.checkline input{margin-top:3px;flex:none}.checkline strong{display:block;font-size:13px}.checkline small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.checkline.done{border-color:color-mix(in srgb,var(--green) 40%,var(--line))}.checkline.done strong{text-decoration:line-through;color:var(--muted)}.progress-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin:18px 0 8px}.progress-meta strong{color:var(--green)}.guide-list{display:grid;gap:12px}.guide-item{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:17px}.guide-item h3{font-size:14px;margin:0 0 6px}.guide-item p{font-size:12px;color:var(--muted);margin:0}.guide-item .tip{font-size:11px;color:var(--green);margin-top:10px}.footer{border-top:1px solid var(--line);margin-top:38px;padding-top:18px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:11px}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--text);color:var(--bg);padding:11px 16px;border-radius:12px;box-shadow:var(--shadow);font-size:12px;font-weight:700;z-index:30;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}.notice{font-size:11px;color:var(--muted);margin-top:12px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:fixed;z-index:20;left:0;top:76px;bottom:0;width:265px;background:var(--bg);box-shadow:var(--shadow);transform:translateX(-105%);transition:transform .22s;border-right:1px solid var(--line)}.sidebar.open{transform:translateX(0)}.menu-toggle{display:grid}.main{padding-top:25px}.two-col{grid-template-columns:1fr}}
+@media(max-width:600px){.topbar{height:66px;padding:0 14px}.brandmark{width:35px;height:35px}.brandname{font-size:17px}.brand-sub{font-size:9px}.status{display:none}.sidebar{top:66px}.main{padding:22px 14px 38px}.hero{padding:25px 20px;border-radius:19px}.hero h1{font-size:36px}.stats{gap:8px}.stat{padding:13px 11px}.stat-number{font-size:24px}.stat-top{font-size:10px;gap:4px}.stat-icon{width:28px;height:28px}.stat-note{font-size:10px}.tool-grid{grid-template-columns:1fr}.tool-card{min-height:0}.page-head{flex-direction:column}.two-col{grid-template-columns:1fr}.checks{grid-template-columns:1fr 1fr}.footer{flex-direction:column}.smalltag{white-space:normal}.card{padding:16px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div style="display:flex;align-items:center;gap:11px">
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <a class="brand" href="#overview" aria-label="DigitalShield home">
+      <span class="brandmark" aria-hidden="true">⬡</span>
+      <span><span class="brandname">Digital<span>Shield</span></span><span class="brand-sub"> Designed & maintained by Md.Shah Juhayer</span></span>
+    </a>
+  </div>
+  <div class="top-actions"><span class="status"><span class="dot"></span> Device-first tools</span><button class="iconbtn" id="themeToggle" aria-label="Switch color theme" title="Switch theme">☼</button></div>
+</header>
+<div class="layout">
+<aside class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="nav-label">Workspace</div>
+  <button class="nav-btn active" data-page="overview"><span class="ico">◫</span>Overview</button>
+  <div class="nav-label">Security tools</div>
+  <button class="nav-btn" data-page="password"><span class="ico">◉</span>Password checker</button>
+  <button class="nav-btn" data-page="generator"><span class="ico">⚿</span>Password generator</button>
+  <button class="nav-btn" data-page="quiz"><span class="ico">⌁</span>Phishing quiz</button>
+  <div class="nav-label">Learn & protect</div>
+  <button class="nav-btn" data-page="checklist"><span class="ico">☑</span>Privacy checklist</button>
+  <button class="nav-btn" data-page="guide"><span class="ico">▤</span>Security guide</button>
+  <div class="sidebar-bottom"><strong>Privacy comes first.</strong><p>Your inputs stay in this page. No account or remote API is required for these tools.</p></div>
+</aside>
+<main class="main">
+<section class="page active" id="page-overview">
+  <div class="hero"><div class="hero-inner"><div class="hero-label"><span class="dot"></span> Your personal security workspace</div><h1>Take control of your<br><span>digital safety.</span></h1><p>Simple, practical tools to build stronger passwords, recognize phishing, and improve your everyday privacy.</p><button class="btn" data-go="password">Explore security tools <span aria-hidden="true">↗</span></button></div></div>
+  <div class="stats">
+    <div class="stat"><div class="stat-top"><span>Privacy checklist</span><span class="stat-icon">☑</span></div><div class="stat-number" id="statChecklist">0%</div><div class="stat-note">Personal security actions complete</div></div>
+    <div class="stat"><div class="stat-top"><span>Quiz best score</span><span class="stat-icon">⌁</span></div><div class="stat-number" id="statQuiz">—</div><div class="stat-note">Phishing awareness practice</div></div>
+    <div class="stat"><div class="stat-top"><span>Available tools</span><span class="stat-icon">✳</span></div><div class="stat-number">05</div><div class="stat-note">Built for everyday protection</div></div>
+  </div>
+  <div class="section-title"><div><h2>Your security toolkit</h2><p>Choose a tool to get started.</p></div><span class="smalltag">Free · No account</span></div>
+  <div class="tool-grid">
+    <article class="tool-card"><div class="tool-icon">◉</div><h3>Password strength checker</h3><p>Check password patterns and get practical suggestions. Your input is not saved.</p><button class="btn" data-go="password">Check a password →</button></article>
+    <article class="tool-card"><div class="tool-icon">⚿</div><h3>Secure password generator</h3><p>Create a random password in your browser with customizable length and character sets.</p><button class="btn" data-go="generator">Generate password →</button></article>
+    <article class="tool-card"><div class="tool-icon">⌁</div><h3>Phishing awareness quiz</h3><p>Practice spotting suspicious messages, misleading links, and social engineering.</p><button class="btn" data-go="quiz">Start the quiz →</button></article>
+    <article class="tool-card"><div class="tool-icon">☑</div><h3>Personal privacy checklist</h3><p>Track useful account and device security habits at your own pace.</p><button class="btn" data-go="checklist">Review checklist →</button></article>
+    <article class="tool-card"><div class="tool-icon">▤</div><h3>Browser security guide</h3><p>Learn practical ways to reduce common browsing and account risks.</p><button class="btn" data-go="guide">Read the guide →</button></article>
+  </div>
+  <div class="privacy-note"><span class="ico">◇</span><div><strong>Designed with privacy in mind</strong><p>These tools run in your browser. Checklist and theme preferences are stored locally on this device. Avoid entering a password you currently use on an important account; test with an example instead.</p></div></div>
+</section>
+<section class="page" id="page-password">
+  <div class="page-head"><div><div class="eyebrow">Security tool / 01</div><h1>Password strength checker</h1><p>Review password length and common patterns, then get actionable suggestions. This is an educational estimate, not a guarantee against cracking.</p></div><span class="smalltag">Runs in this page</span></div>
+  <div class="two-col">
+    <div class="card"><h2>Check a password</h2><p class="helper">For privacy, use a sample password rather than a password protecting a real account.</p>
+      <label class="field-label" for="passwordInput">Password sample</label><div class="input-wrap"><input class="field" id="passwordInput" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Enter a sample password" aria-describedby="passwordHelp"><button class="btn" id="togglePassword" type="button" aria-label="Show password">Show</button></div><p id="passwordHelp" class="notice">Your input is not sent to a server or saved by this tool.</p>
+      <div class="meter" aria-label="Estimated password strength"><span id="strengthBar"></span></div><div class="meter-label"><span id="strengthLabel">Waiting for input</span><span id="strengthBits">—</span></div>
+      <div class="result" id="passwordFeedback" aria-live="polite"><strong>Start with a sample</strong>Suggestions will appear here as you type.</div>
+    </div>
+    <div class="card"><h2>What helps most?</h2><p class="helper">A practical password should be hard to guess and unique to each account.</p>
+      <div class="guide-list">
+        <div class="guide-item"><h3>Length matters</h3><p>Longer passwords and passphrases are generally harder to guess than short, complicated-looking ones.</p></div>
+        <div class="guide-item"><h3>Avoid predictable patterns</h3><p>Names, birthdays, keyboard sequences, common words, and simple substitutions are easy to guess.</p></div>
+        <div class="guide-item"><h3>Use a unique password</h3><p>Never reuse a password across important accounts. A reputable password manager can help.</p></div>
+      </div>
+      <p class="notice">This checker uses local heuristics only. It does not query breached-password databases or calculate a verified crack time.</p>
+    </div>
+  </div>
+</section>
+<section class="page" id="page-generator">
+  <div class="page-head"><div><div class="eyebrow">Security tool / 02</div><h1>Password generator</h1><p>Create a random password using your browser's cryptographically secure random-number generator.</p></div><span class="smalltag">No account required</span></div>
+  <div class="two-col">
+    <div class="card"><h2>Customize your password</h2><p class="helper">Choose a length and character groups. Use at least 16 characters for general-purpose strong passwords when supported by the service.</p>
+      <div class="range-row"><label for="lengthRange">Password length</label><output id="lengthValue" for="lengthRange">20 characters</output></div><input id="lengthRange" type="range" min="8" max="64" value="20">
+      <div class="checks">
+        <label class="check-option"><input type="checkbox" id="optUpper" checked> Uppercase (A–Z)</label>
+        <label class="check-option"><input type="checkbox" id="optLower" checked> Lowercase (a–z)</label>
+        <label class="check-option"><input type="checkbox" id="optNumbers" checked> Numbers (0–9)</label>
+        <label class="check-option"><input type="checkbox" id="optSymbols" checked> Symbols (!@#…)</label>
+      </div>
+      <button class="btn primary" id="generateBtn">✳ Generate password</button>
+      <label class="field-label" for="generatedPassword">Generated password</label><div class="password-output"><span class="generated" id="generatedPassword" aria-live="polite">Tap generate to create one</span><button class="btn" id="copyPassword" disabled>Copy</button></div>
+      <p class="notice" id="generatorStatus" aria-live="polite">Password generation requires a secure browser context (HTTPS or localhost) and crypto.getRandomValues().</p>
+    </div>
+    <div class="card"><h2>Generation safety</h2><p class="helper">A few important notes about this tool.</p>
+      <div class="guide-list">
+        <div class="guide-item"><h3>Secure randomness</h3><p>Uses the browser's built-in crypto.getRandomValues() instead of Math.random().</p></div>
+        <div class="guide-item"><h3>Balanced selection</h3><p>Uses rejection sampling when mapping random bytes to characters to avoid modulo bias, and includes each selected character group.</p></div>
+        <div class="guide-item"><h3>Handle with care</h3><p>Copy only to a trusted password manager. Clipboard access depends on browser permissions and secure context.</p></div>
+      </div>
+      <p class="notice">This tool does not store generated passwords. Clearing or navigating away removes the current output from the page.</p>
+    </div>
+  </div>
+</section>
+<section class="page" id="page-quiz">
+  <div class="page-head"><div><div class="eyebrow">Learn & protect / 01</div><h1>Phishing awareness quiz</h1><p>Practice identifying warning signs in fictional scenarios. Real messages can be more subtle than these examples.</p></div><span class="smalltag">8 questions</span></div>
+  <div class="two-col">
+    <div class="card" id="quizCard"><div class="question-count" id="questionCount">Question 01 / 08</div><div class="quiz-progress"><span id="quizProgress" style="width:12.5%"></span></div><h2 class="question" id="questionText"></h2><div class="answer-list" id="answerList"></div><div id="quizFeedback" aria-live="polite"></div><div class="quiz-footer"><span class="muted" id="quizScore">Score: 0</span><button class="btn primary" id="nextQuestion" disabled>Next question →</button></div></div>
+    <div class="card"><h2>Pause before you click</h2><p class="helper">These habits help with suspicious emails, texts, DMs, and unexpected calls.</p><div class="guide-list">
+      <div class="guide-item"><h3>Verify the sender</h3><p>Check the full address or account identity. Display names can be misleading or spoofed.</p></div>
+      <div class="guide-item"><h3>Inspect the destination</h3><p>Don't rely on link text alone. Navigate to the official website yourself instead of using a message link.</p></div>
+      <div class="guide-item"><h3>Resist urgency</h3><p>Threats, surprise prizes, secrecy, and urgent payment requests are common manipulation tactics.</p></div>
+      <div class="guide-item"><h3>Report and verify</h3><p>Contact the organization using a trusted channel, and report suspicious messages through the appropriate service.</p></div>
+    </div></div>
+  </div>
+</section>
+<section class="page" id="page-checklist">
+  <div class="page-head"><div><div class="eyebrow">Learn & protect / 02</div><h1>Personal privacy checklist</h1><p>Small, consistent habits can reduce everyday security risks. Check off the actions you've completed.</p></div><span class="smalltag">Saved on this device</span></div>
+  <div class="two-col">
+    <div class="card"><h2>Your action plan</h2><p class="helper">Progress is stored locally in this browser, not in an online account.</p><div class="progress-meta"><span>Completed actions</span><strong id="checkProgressText">0 of 10 · 0%</strong></div><div class="meter"><span id="checkProgressBar"></span></div><div class="checklist" id="checklistItems"></div><div style="margin-top:17px"><button class="btn ghost danger" id="resetChecklist">Reset checklist</button></div></div>
+    <div class="card"><h2>Make it manageable</h2><p class="helper">You don't need to do everything at once.</p><div class="guide-list">
+      <div class="guide-item"><h3>Start with email</h3><p>Your email account often controls password resets for other services. Protect it with a unique password and multifactor authentication.</p></div>
+      <div class="guide-item"><h3>Keep recovery options current</h3><p>Check that your recovery email, phone, and backup codes are up to date and stored safely.</p></div>
+      <div class="guide-item"><h3>Review regularly</h3><p>Revisit app permissions, signed-in devices, and account alerts every few months.</p></div>
+    </div><p class="notice">Local browser data can be cleared by browser settings or lost if you change devices. This checklist is not a backup service.</p></div>
+  </div>
+</section>
+<section class="page" id="page-guide">
+  <div class="page-head"><div><div class="eyebrow">Learn & protect / 03</div><h1>Browser security guide</h1><p>Practical, browser-independent advice to help you browse with more confidence.</p></div><span class="smalltag">Beginner friendly</span></div>
+  <div class="guide-list">
+    <article class="guide-item"><h3>01. Keep your browser and operating system updated</h3><p>Updates often fix security flaws. Enable automatic updates where practical and install updates from official device settings or vendor websites.</p><div class="tip">Action: Check for updates on your device today.</div></article>
+    <article class="guide-item"><h3>02. Understand HTTPS — but don't over-trust it</h3><p>HTTPS encrypts data in transit between your browser and a website. It does not prove that a website is honest; phishing sites can also use HTTPS.</p><div class="tip">Action: Verify the domain and context before entering sensitive information.</div></article>
+    <article class="guide-item"><h3>03. Use multifactor authentication</h3><p>Where possible, enable passkeys or an authenticator app. Save recovery codes in a secure place. SMS codes can be better than no second factor, but may be more vulnerable than phishing-resistant options.</p><div class="tip">Action: Secure your primary email and financial accounts first.</div></article>
+    <article class="guide-item"><h3>04. Be selective with extensions</h3><p>Extensions can read or modify data on websites depending on their permissions. Install only what you need, check the publisher, and remove unused extensions.</p><div class="tip">Action: Review your extension list and permissions.</div></article>
+    <article class="guide-item"><h3>05. Manage cookies and site permissions</h3><p>Review location, camera, microphone, notification, and pop-up permissions. Blocking all cookies can break sites, so choose settings that fit your needs.</p><div class="tip">Action: Remove permissions for sites you no longer use.</div></article>
+    <article class="guide-item"><h3>06. Treat public Wi-Fi carefully</h3><p>Prefer HTTPS websites, keep device sharing turned off on unfamiliar networks, and avoid ignoring certificate warnings. A VPN does not make phishing or malware harmless.</p><div class="tip">Action: Turn off automatic connection to unknown Wi-Fi networks.</div></article>
+    <article class="guide-item"><h3>07. Check links without opening them</h3><p>On many devices, you can long-press a link to preview its destination. Watch for misspellings, unexpected subdomains, URL shorteners, and domains that imitate familiar brands.</p><div class="tip">Action: For important accounts, open the official app or type the known address yourself.</div></article>
+    <article class="guide-item"><h3>08. Protect your device and recovery methods</h3><p>Use a screen lock, keep backups, and know how to revoke lost-device sessions. Never share one-time codes or recovery codes with someone who contacts you unexpectedly.</p><div class="tip">Action: Confirm your device lock and account recovery options.</div></article>
+  </div>
+  <div class="privacy-note"><span class="ico">ⓘ</span><div><strong>Educational information, not a security audit</strong><p>DigitalShield does not scan your browser, verify account settings, or guarantee protection. Follow official guidance for your specific device and services.</p></div></div>
+</section>
+<footer class="footer"><span>© <span id="year"></span> DigitalShield · Personal Cyber Safety Toolkit</span><span>Designed & Maintained by Md.Shah Juhayer</span></footer>
+</main>
+</div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+const $ = (s, root=document) => root.querySelector(s);
+const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+const toastEl = $("#toast");
+let toastTimer;
+function toast(message){toastEl.textContent=message;toastEl.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toastEl.classList.remove("show"),2200)}
+const navButtons = $$(".nav-btn");
+function showPage(name){
+ const target=$("#page-"+name); if(!target)return;
+ $$(".page").forEach(p=>p.classList.toggle("active",p===target));
+ navButtons.forEach(b=>b.classList.toggle("active",b.dataset.page===name));
+ $("#sidebar").classList.remove("open");$("#menuToggle").setAttribute("aria-expanded","false");
+ window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+}
+navButtons.forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+$$("[data-go]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.go)));
+$("#menuToggle").addEventListener("click",()=>{const open=$("#sidebar").classList.toggle("open");$("#menuToggle").setAttribute("aria-expanded",String(open))});
+document.addEventListener("click",e=>{if(window.innerWidth<=900 && $("#sidebar").classList.contains("open")&&!$("#sidebar").contains(e.target)&&!$("#menuToggle").contains(e.target)){$("#sidebar").classList.remove("open");$("#menuToggle").setAttribute("aria-expanded","false")}});
+function getLocal(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:v}catch{return fallback}}
+function setLocal(key,value){try{localStorage.setItem(key,value);return true}catch{return false}}
+function applyTheme(theme){document.documentElement.dataset.theme=theme;$("#themeToggle").textContent=theme==="dark"?"☼":"☾";$("#themeToggle").setAttribute("aria-label",theme==="dark"?"Switch to light theme":"Switch to dark theme");setLocal("ds-theme",theme)}
+applyTheme(getLocal("ds-theme","dark")==="light"?"light":"dark");
+$("#themeToggle").addEventListener("click",()=>applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark"));
+$("#year").textContent=new Date().getFullYear();
+
+// Password checker: a local heuristic, not a crack-time estimator.
+const passwordInput=$("#passwordInput"),strengthBar=$("#strengthBar"),strengthLabel=$("#strengthLabel"),strengthBits=$("#strengthBits"),passwordFeedback=$("#passwordFeedback");
+function assessPassword(p){
+ if(!p)return {score:0,label:"Waiting for input",notes:["Enter a sample to see guidance."],color:"var(--line)"};
+ const lower=p.toLowerCase(), classes=[/[a-z]/.test(p),/[A-Z]/.test(p),/[0-9]/.test(p),/[^A-Za-z0-9]/.test(p)].filter(Boolean).length;
+ let score=0; if(p.length>=8)score++;if(p.length>=12)score++;if(p.length>=16)score++;if(p.length>=20)score++;if(classes>=3)score++;if(classes===4)score++;
+ const common=["password","password123","123456","123456789","qwerty","letmein","admin","welcome","iloveyou","abc123"];
+ const repeated=/(.)\1{2,}/.test(p), sequence=/1234|2345|3456|4567|5678|6789|abcd|qwerty|asdf|zxcv/i.test(p);
+ const hasCommon=common.some(x=>lower.includes(x));
+ if(hasCommon)score=Math.min(score,1);if(repeated)score=Math.max(0,score-1);if(sequence)score=Math.max(0,score-1);
+ let label, color;
+ if(p.length<8||hasCommon||score<=1){label="Weak";color="var(--danger)"}else if(score<=3){label="Fair";color="var(--amber)"}else if(score<=4){label="Good";color="var(--green)"}else{label="Strong";color="var(--green)"}
+ const notes=[];if(p.length<12)notes.push("Use at least 12 characters; 16 or more is a stronger target.");else if(p.length<16)notes.push("Consider 16 or more characters where supported.");if(classes<3)notes.push("Consider a longer passphrase or a wider mix of character types.");if(hasCommon)notes.push("Avoid common password words or familiar combinations.");if(repeated)notes.push("Avoid repeated characters such as aaa or 111.");if(sequence)notes.push("Avoid predictable sequences such as 1234 or qwerty.");if(!notes.length)notes.push("Good signs. Make sure it is unique to one account and not based on personal details.");return {score,label,notes,color};
+}
+function renderPasswordAssessment(){const p=passwordInput.value;const a=assessPassword(p);strengthBar.style.width=p?Math.max(8,a.score/6*100)+"%":"0%";strengthBar.style.background=a.color;strengthLabel.textContent=a.label;strengthBits.textContent=p?`${p.length} characters`:"—";passwordFeedback.replaceChildren();const strong=document.createElement("strong");strong.textContent=p?`${a.label} estimate`:"Start with a sample";passwordFeedback.append(strong);const ul=document.createElement("ul");a.notes.forEach(n=>{const li=document.createElement("li");li.textContent=n;ul.append(li)});passwordFeedback.append(ul)}
+passwordInput.addEventListener("input",renderPasswordAssessment);
+$("#togglePassword").addEventListener("click",()=>{const showing=passwordInput.type==="text";passwordInput.type=showing?"password":"text";$("#togglePassword").textContent=showing?"Show":"Hide";$("#togglePassword").setAttribute("aria-label",showing?"Show password":"Hide password" )});
+
+// Secure password generation with crypto.getRandomValues and rejection sampling.
+const upper="ABCDEFGHJKLMNPQRSTUVWXYZ",lower="abcdefghijkmnopqrstuvwxyz",numbers="23456789",symbols="!@#$%&*+-=?_";
+function randomInt(max){
+ if(!Number.isInteger(max)||max<1||max>256)throw new Error("Invalid random range");
+ const limit=Math.floor(256/max)*max;const b=new Uint8Array(1);
+ do{crypto.getRandomValues(b)}while(b[0]>=limit);
+ return b[0]%max;
+}
+function secureShuffle(arr){for(let i=arr.length-1;i>0;i--){const j=randomInt(i+1);[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
+function generateSecurePassword(length,sets){
+ if(!globalThis.crypto||typeof crypto.getRandomValues!=="function")throw new Error("Secure randomness is unavailable. Open this site using HTTPS in a supported browser.");
+ if(!sets.length)throw new Error("Choose at least one character group.");
+ const all=sets.join("");if(all.length>256)throw new Error("Character set is too large.");
+ const out=sets.map(set=>set[randomInt(set.length)]);
+ while(out.length<length)out.push(all[randomInt(all.length)]);
+ return secureShuffle(out).join("");
+}
+const lengthRange=$("#lengthRange"),lengthValue=$("#lengthValue"),generatedPassword=$("#generatedPassword"),copyPassword=$("#copyPassword");
+lengthRange.addEventListener("input",()=>lengthValue.textContent=`${lengthRange.value} characters`);
+function chosenSets(){return [$("#optUpper").checked?upper:"",$("#optLower").checked?lower:"",$("#optNumbers").checked?numbers:"",$("#optSymbols").checked?symbols:""].filter(Boolean)}
+$("#generateBtn").addEventListener("click",()=>{
+ try{const value=generateSecurePassword(Number(lengthRange.value),chosenSets());generatedPassword.textContent=value;copyPassword.disabled=false;$("#generatorStatus").textContent="Generated locally using crypto.getRandomValues(). The password is not stored by this tool."}
+ catch(e){generatedPassword.textContent="Unable to generate";copyPassword.disabled=true;$("#generatorStatus").textContent=e.message||"Password generation failed."}
+});
+copyPassword.addEventListener("click",async()=>{
+ const value=generatedPassword.textContent;if(!value||value==="Tap generate to create one"||value==="Unable to generate")return;
+ try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(value)}else{const ta=document.createElement("textarea");ta.value=value;ta.style.position="fixed";ta.style.opacity="0";document.body.append(ta);ta.select();const ok=document.execCommand("copy");ta.remove();if(!ok)throw new Error("Copy unavailable")}toast("Password copied. Store it securely.");}
+ catch{toast("Copy blocked by browser. Select and copy the password manually.")}
+});
+
+// Phishing quiz, all scenarios fictional.
+const questions=[
+ {q:"A message says your account will be closed in 10 minutes unless you sign in through its link. What is the safest next step?",a:["Click quickly so you don't lose access","Open the official app or type the known website address yourself","Reply and ask the sender to prove who they are","Forward it to friends to ask if it looks real"],c:1,e:"Urgency is a common manipulation tactic. Verify through a trusted channel rather than using the message link."},
+ {q:"A delivery text asks for a small unexpected fee and links to a strange-looking domain. What should you do?",a:["Pay because the amount is small","Enter your card details but not your PIN","Check delivery status through the carrier's official website or app","Open the link in private browsing mode"],c:2,e:"Private browsing does not make a malicious website safe. Verify delivery details using a trusted official channel."},
+ {q:"Which statement about the padlock/HTTPS indicator is correct?",a:["It proves the website is legitimate","It guarantees the website has no malware","It means the connection is encrypted, but the site may still be malicious","It means the site is run by a government"],c:2,e:"HTTPS protects data in transit; it does not certify the honesty or safety of the website itself."},
+ {q:"A coworker unexpectedly messages you asking for a one-time login code. What should you do?",a:["Share it if their profile photo looks right","Send only half the code","Verify the request independently and never share authentication codes","Post it in the team group"],c:2,e:"One-time codes can allow account takeover. Verify identity through a separate trusted channel and don't share the code."},
+ {q:"An email comes from a familiar brand, but the sender address has a misspelling. What is the best interpretation?",a:["The logo means it's authentic","Treat it as suspicious and verify through the official channel","Open its attachment to learn more","Reply with your account details"],c:1,e:"Sender names and logos can be copied. Check the actual domain and avoid attachments or links until verified."},
+ {q:"A website offers a prize you never entered to win and asks you to pay a fee to claim it. What is a warning sign?",a:["It uses bright colours","It asks for an urgent fee or sensitive information for an unexpected prize","It has a mobile-friendly layout","It loads quickly"],c:1,e:"Unexpected prizes combined with payment demands or sensitive-data requests are common scam indicators."},
+ {q:"You receive an unexpected attachment that claims to be an invoice. What is a safer approach?",a:["Enable macros if asked","Open it on your phone because phones can't get malware","Verify with the sender using a known contact method before opening","Upload it to a public file-sharing site"],c:2,e:"Unexpected attachments can carry malicious content. Confirm the message independently and follow your organization's security process."},
+ {q:"You entered your password on a page you now suspect was fake. What should you do first?",a:["Wait to see if anything happens","Change the password using the real site/app, secure reused accounts, and enable MFA","Reply to the suspicious message","Delete your browser history only"],c:1,e:"Use the legitimate service to change the compromised password promptly. Change reused passwords too, review sessions, and enable MFA."}
+];
+let qIndex=0,qScore=0,qAnswered=false,bestScore=Number(getLocal("ds-best-quiz","0"))||0;
+function renderQuiz(){
+ const q=questions[qIndex];qAnswered=false;$("#questionCount").textContent=`Question ${String(qIndex+1).padStart(2,"0")} / ${String(questions.length).padStart(2,"0")}`;$("#quizProgress").style.width=`${(qIndex+1)/questions.length*100}%`;$("#questionText").textContent=q.q;$("#answerList").replaceChildren();$("#quizFeedback").replaceChildren();$("#nextQuestion").disabled=true;$("#nextQuestion").textContent=qIndex===questions.length-1?"See results →":"Next question →";$("#quizScore").textContent=`Score: ${qScore}`;
+ q.a.forEach((answer,i)=>{const btn=document.createElement("button");btn.className="answer";btn.type="button";const letter=document.createElement("span");letter.className="letter";letter.textContent=String.fromCharCode(65+i);const text=document.createElement("span");text.textContent=answer;btn.append(letter,text);btn.addEventListener("click",()=>answerQuestion(i));$("#answerList").append(btn)});
+}
+function answerQuestion(index){
+ if(qAnswered)return;qAnswered=true;const q=questions[qIndex];const buttons=$$(".answer",$("#answerList"));buttons.forEach((b,i)=>{b.disabled=true;if(i===q.c)b.classList.add("correct");else if(i===index)b.classList.add("wrong")});if(index===q.c)qScore++;
+ const box=document.createElement("div");box.className="feedback";const strong=document.createElement("strong");strong.textContent=index===q.c?"Correct — good call.":"Not quite — here's why.";const p=document.createElement("div");p.textContent=q.e;box.append(strong,p);$("#quizFeedback").append(box);$("#quizScore").textContent=`Score: ${qScore}`;$("#nextQuestion").disabled=false;
+}
+$("#nextQuestion").addEventListener("click",()=>{if(!qAnswered)return;if(qIndex<questions.length-1){qIndex++;renderQuiz()}else{const percent=Math.round(qScore/questions.length*100);bestScore=Math.max(bestScore,percent);setLocal("ds-best-quiz",String(bestScore));$("#statQuiz").textContent=bestScore+"%";$("#questionCount").textContent="Quiz complete";$("#quizProgress").style.width="100%";$("#questionText").textContent=`You scored ${qScore} out of ${questions.length} (${percent}%).`;$("#answerList").replaceChildren();$("#quizFeedback").replaceChildren();const box=document.createElement("div");box.className="feedback";const strong=document.createElement("strong");strong.textContent=percent>=80?"Great awareness":"Keep practicing";const p=document.createElement("p");p.textContent="The safest habit is to pause, verify unexpected requests independently, and avoid sharing passwords or one-time codes.";box.append(strong,p);$("#quizFeedback").append(box);$("#quizScore").textContent="Final score";$("#nextQuestion").textContent="Try again ↻";$("#nextQuestion").disabled=false;$("#nextQuestion").onclick=()=>{qIndex=0;qScore=0;$("#nextQuestion").onclick=null;renderQuiz()};}});
+renderQuiz();
+
+// Checklist state, stored locally with a graceful in-memory fallback.
+const checklistData=[
+ ["Use unique passwords","Avoid reusing a password across important accounts."],
+ ["Enable multifactor authentication","Protect email and other important accounts with MFA or passkeys."],
+ ["Update devices and browsers","Install security updates from official settings."],
+ ["Review account recovery options","Keep recovery email, phone, and backup codes current."],
+ ["Use a screen lock","Set a strong PIN or password and biometrics if suitable."],
+ ["Review signed-in devices","Sign out of devices and sessions you no longer recognize."],
+ ["Check app permissions","Remove access that apps do not need."],
+ ["Limit browser extensions","Keep only trusted extensions with necessary permissions."],
+ ["Back up important files","Maintain a backup appropriate for your needs."],
+ ["Recognize phishing signs","Verify unexpected links, attachments, payments, and code requests."]
+];
+let checklistState={};try{checklistState=JSON.parse(getLocal("ds-checklist","{}"))||{}}catch{checklistState={}}
+function renderChecklist(){
+ const root=$("#checklistItems");root.replaceChildren();checklistData.forEach((item,i)=>{const label=document.createElement("label");label.className="checkline"+(checklistState[i]?" done":"");const input=document.createElement("input");input.type="checkbox";input.checked=!!checklistState[i];input.addEventListener("change",()=>{checklistState[i]=input.checked;setLocal("ds-checklist",JSON.stringify(checklistState));renderChecklist()});const content=document.createElement("span");const strong=document.createElement("strong");strong.textContent=item[0];const small=document.createElement("small");small.textContent=item[1];content.append(strong,small);label.append(input,content);root.append(label)});
+ const count=checklistData.filter((_,i)=>!!checklistState[i]).length;const pct=Math.round(count/checklistData.length*100);$("#checkProgressText").textContent=`${count} of ${checklistData.length} · ${pct}%`;$("#checkProgressBar").style.width=pct+"%";$("#statChecklist").textContent=pct+"%";
+}
+$("#resetChecklist").addEventListener("click",()=>{if(confirm("Reset all checklist progress on this device?")){checklistState={};setLocal("ds-checklist","{}");renderChecklist();toast("Checklist reset.")}});
+renderChecklist();
+$("#statQuiz").textContent=bestScore?bestScore+"%":"—";
+</script>
+</body>
+</html>
